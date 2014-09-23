@@ -1,0 +1,4 @@
+body { font-family: 'Delius', cursive; }
+#header { padding: 10px; background-color: black; color: orange; }
+h1 { font-size: 30px; letter-spacing: 5px; }
+span.js { color: white; }

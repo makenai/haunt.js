@@ -9,8 +9,21 @@
 <body>
   <div id="header">
     <h1>haunt<span class="js">.js</span></h1>
+    bgm: <select name="bgm" id="bgm">
+    	<option>none</option>
+    	<option value="music/musicbox.mp3">musicbox</option>
+    	<option value="music/throat.mp3">throat</option>
+    </select>
   </div>
-
+  <div id="room">
+  	<a class="sound" data-sound="sounds/teddybear.mp3" data-pos="0,0,0" href="#">teddybear</a>
+  	<a class="sound" data-sound="sounds/whimper.mp3" data-pos="-1,-1,0" href="#">ul</a>
+  	<a class="sound" data-sound="sounds/whimper.mp3" data-pos="1,-1,0" href="#">ur</a>
+  	<a class="sound" data-sound="sounds/whimper.mp3" data-pos="-1,1,0" href="#">bl</a>
+  	<a class="sound" data-sound="sounds/whimper.mp3" data-pos="1,1,0" href="#">br</a>  	
+  </div>
+  <script src="jquery-1.11.1.min.js"></script>
+  <script src="howler.min.js"></script>
   <script src="haunt.js"></script>
 </body>
 </html>

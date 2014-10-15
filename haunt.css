@@ -1,4 +1,26 @@
 body { font-family: 'Delius', cursive; }
-#header { padding: 10px; background-color: black; color: orange; }
+#header { padding: 10px; background-color: black; color: orange; text-align: right; height: 30px;}
 h1 { font-size: 30px; letter-spacing: 5px; }
+#header h1 { float: left; display: inline-block; }
 span.js { color: white; }
+
+a.sound {
+	width: 50px;
+	height: 35px;
+	border: 1px solid black;
+	overflow: hidden;
+	line-height: 35px;
+	text-align: center;
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+}
+
+a.sound.playing {
+	background-color: orange;
+}
+
+#room {
+	height: 100%;
+	padding: 10px;
+}

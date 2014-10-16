@@ -5,7 +5,7 @@ h1 { font-size: 30px; letter-spacing: 5px; }
 span.js { color: white; }
 
 a.sound {
-	width: 50px;
+	width: 150px;
 	height: 35px;
 	border: 1px solid black;
 	overflow: hidden;
@@ -14,6 +14,18 @@ a.sound {
 	display: inline-block;
 	text-decoration: none;
 	color: black;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	opacity: 0.15;
+}
+
+a.sound.playable {
+	opacity: 1;
+}
+
+a.sound:hover {
+	background-color: #DDD;
 }
 
 a.sound.playing {

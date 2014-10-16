@@ -1,4 +1,5 @@
 $(function() {
+
     console.log( "ready!" );
 
     var bgm = {};
@@ -22,6 +23,10 @@ $(function() {
 		});
 	}
 
+	function classify(str) {
+		return str.replace(/[^A-Z0-9]/gi,'');
+	}
+
     // Preload BGM
 	$("#bgm > option").each(function() {
 		bgm[ this.text ] = new Howl({
@@ -41,15 +46,20 @@ $(function() {
 	// Preload Sounds
 	$("a.sound").each(function() {
 		var soundName = $(this).text();
-		var pos = $(this).data('pos').split(',');
-		$(this).attr('id', soundName);
+		$(this).attr('id', classify(soundName) );
 		sounds[ soundName ] = new Howl({
 			urls: [ $(this).data('sound') ],
 			onend: function() {
-				$('#' + soundName).removeClass('playing');
+				$('#' + classify(soundName) ).removeClass('playing');
+			},
+			onload: function() {
+				$('#' + classify(soundName) ).addClass('playable');
 			}
 		});
-		sounds[ soundName ].pos3d( pos[0], pos[1], pos[2] );
+		if ($(this).data('pos')) {
+			var pos = $(this).data('pos').split(',');
+			sounds[ soundName ].pos3d( pos[0], pos[1], pos[2] );
+		}
 	});
 
 	// Click to play
